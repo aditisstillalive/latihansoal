@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal — Pilih Mata Pelajaran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── START SCREEN ── -->
+  <div id="start-screen" class="screen active">
+    <div class="start-card">
+      <span class="temple-icon">🏛️</span>
+      <h1>Latihan Soal</h1>
+      <h2 id="subject-subtitle">Pilih mata pelajaran untuk mulai berlatih</h2>
+
+      <div class="field-group">
+        <label for="player-name">Nama</label>
+        <input id="player-name" class="text-input" type="text" maxlength="20" autocomplete="nickname" placeholder="Tulis namamu">
+        <p id="name-error" class="field-error" style="display:none">Isi nama dulu ya sebelum mulai.</p>
+      </div>
+
+      <div class="field-group">
+        <label for="subject-select">Mata Pelajaran</label>
+        <select id="subject-select"></select>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item"><span class="num" id="pg-count">10</span><span class="lbl">Pilihan Ganda</span></div>
+        <div class="info-item"><span class="num" id="mc-count">10</span><span class="lbl">Multiple Choice</span></div>
+        <div class="info-item"><span class="num" id="bs-count">10</span><span class="lbl">Benar / Salah</span></div>
+      </div>
+      <div class="start-actions">
+        <button id="start-btn" class="btn-primary">Mulai Latihan ▶</button>
+        <button id="leaderboard-btn" class="btn-secondary">🏆 Leaderboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LEADERBOARD SCREEN ── -->
+  <div id="leaderboard-screen" class="screen">
+    <div class="result-card">
+      <span class="temple-icon">🏆</span>
+      <h2>Leaderboard</h2>
+      <p id="lb-subject" class="lb-subject"></p>
+      <div id="lb-board"></div>
+      <button id="lb-back-btn" class="btn-secondary">← Kembali</button>
+    </div>
+  </div>
+
+  <!-- ── QUIZ SCREEN ── -->
+  <div id="quiz-screen" class="screen">
+
+    <div class="quiz-header">
+      <div class="progress-info">
+        <span id="question-counter">Soal 1 / 30</span>
+        <span id="question-type-badge">Pilihan Ganda</span>
+      </div>
+      <div class="header-right">
+        <span id="stopwatch" class="stopwatch">⏱ 00:00</span>
+        <div class="score-display">
+          <span>Skor: </span><span id="score-val">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="question-card">
+      <p id="question-text"></p>
+      <p id="multiple-hint" class="hint" style="display:none">Pilih semua jawaban yang benar, lalu klik Submit.</p>
+    </div>
+
+    <div id="options-container"></div>
+
+    <div class="action-area">
+      <button id="submit-btn" class="btn-primary"   style="display:none">Submit Jawaban</button>
+      <button id="next-btn"   class="btn-secondary" style="display:none">Soal Berikutnya →</button>
+    </div>
+
+    <div id="feedback-box" class="feedback-box">
+      <div id="feedback-icon"></div>
+      <div id="feedback-text"></div>
+      <div id="explanation-text"></div>
+    </div>
+
+  </div>
+
+  <!-- ── RESULT SCREEN ── -->
+  <div id="result-screen" class="screen">
+    <div class="result-card">
+      <span id="result-emoji">🎉</span>
+      <h2>Latihan Selesai!</h2>
+      <div class="score-circle">
+        <span id="final-score">0</span>
+        <span class="score-total" id="score-total">/ 30</span>
+      </div>
+      <p class="score-pct" id="score-pct">0% Jawaban Benar</p>
+      <p class="final-time">⏱ Waktu: <span id="final-time">00:00</span></p>
+      <div class="result-breakdown">
+        <div class="bk-item"><span>Pilihan Ganda</span><span id="pg-score">0 / 10</span></div>
+        <div class="bk-item"><span>Multiple Choice</span><span id="mc-score">0 / 10</span></div>
+        <div class="bk-item"><span>Benar / Salah</span><span id="bs-score">0 / 10</span></div>
+      </div>
+      <p class="result-msg" id="result-msg"></p>
+
+      <div class="result-lb">
+        <h3>🏆 Leaderboard</h3>
+        <p id="my-rank" class="my-rank"></p>
+        <div id="result-board"></div>
+        <button id="retry-submit-btn" class="btn-secondary" style="display:none">Coba kirim lagi</button>
+      </div>
+
+      <div class="start-actions">
+        <button id="restart-btn" class="btn-primary">Ulangi Latihan 🔄</button>
+        <button id="home-btn" class="btn-secondary">Ganti Mapel / Nama</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "latihansoal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --test 'api/*.test.js'",
+    "dev": "node dev-server.js",
+    "migrate": "node --env-file=.env.local db/migrate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "openai": "^7.45.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
