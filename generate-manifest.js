@@ -14,6 +14,7 @@ const SUBJECT_LABELS = {
   ppkn: 'PPKN — Pancasila dan Kewarganegaraan',
   matematika: 'Matematika',
   ipa: 'IPA',
+  ipas: 'IPAS — Kelas IV',
   pjok: 'PJOK',
   seni: 'Seni Budaya',
   binggris: 'Bahasa Inggris',

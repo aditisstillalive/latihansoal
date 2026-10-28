@@ -25,6 +25,19 @@ function shuffle(arr) {
   return a;
 }
 
+// Returns a copy of q with options in random order and answer indices remapped.
+// True/false questions keep their fixed Benar/Salah buttons.
+function shuffleOptions(q) {
+  if (q.type === 'truefalse') return q;
+  const order = shuffle(q.options.map((_, i) => i));
+  const newIndex = oldIdx => order.indexOf(oldIdx);
+  return {
+    ...q,
+    options: order.map(i => q.options[i]),
+    answer: Array.isArray(q.answer) ? q.answer.map(newIndex) : newIndex(q.answer)
+  };
+}
+
 function formatTime(ms) {
   const totalSec = Math.floor(ms / 1000);
   const m = String(Math.floor(totalSec / 60)).padStart(2, '0');
@@ -128,7 +141,7 @@ function startQuiz() {
     ...shuffle(pool.single),
     ...shuffle(pool.multiple),
     ...shuffle(pool.truefalse)
-  ];
+  ].map(shuffleOptions);
 
   if (activeQuestions.length === 0) {
     alert('Tidak ada soal tersedia untuk mata pelajaran ini. Silakan pilih mata pelajaran lain.');
