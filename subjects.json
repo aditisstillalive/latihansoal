@@ -6,5 +6,9 @@
   "ipas": {
     "name": "IPAS — Kelas IV",
     "questionFile": "questions_ipas.js"
+  },
+  "mtk": {
+    "name": "Matematika — Kelas IV",
+    "questionFile": "questions_mtk.js"
   }
 }

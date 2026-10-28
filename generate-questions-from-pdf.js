@@ -49,6 +49,7 @@ const SUBJECT_LABELS = {
   ips: 'IPS — Sejarah Kerajaan Hindu-Buddha',
   ppkn: 'PPKN — Pancasila dan Kewarganegaraan',
   matematika: 'Matematika',
+  mtk: 'Matematika — Kelas IV',
   ipa: 'IPA',
   ipas: 'IPAS — Kelas IV',
   pjok: 'PJOK',
